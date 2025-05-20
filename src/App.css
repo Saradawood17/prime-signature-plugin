@@ -36,14 +36,10 @@ body {
 }
 
 
-.swiper.swiper-customize {
-  
-  height: 80vh;
 
-}
     
 .full-bg-img{
-  background-image: url("./assets/Frame 1163.png") ;
+  background-image: url("./assets/iPhone 15.png"); 
   background-size: cover;
   background-position: center center;
 }
@@ -70,7 +66,7 @@ body {
   color: #fff;
 }
 
-
+/* 
 .swiper-slide:nth-child(1n) {
   background-color: rgb(206, 17, 17);
 }
@@ -109,4 +105,4 @@ body {
 
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
-}
+} */

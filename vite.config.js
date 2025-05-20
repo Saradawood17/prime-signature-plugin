@@ -16,9 +16,7 @@ export default defineConfig({
     emptyOutDir: true, // يمسح القديم قبل كل build
     sourcemap: false, // نطفي source maps في الإنتاج عشان نحسن الأداء
     minify: 'esbuild', // أو ممكن 'terser' لو محتاجة ضغط أقوى
-    rollupOptions: {
-      input: 'src/main.jsx' // غيري المسار حسب الملف الأساسي عندك
-    }
+  
   },
   server: {
     port: 3000,

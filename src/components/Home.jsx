@@ -7,26 +7,41 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import Frame1 from "../assets/Frame (1).svg?react";
-import Frame2 from "../assets/Frame (2).svg?react";
-import Frame3 from "../assets/Frame (3).svg?react";
-import Frame4 from "../assets/Frame.svg?react";
-import storeUsHome from "../assets/MacBook Air - 1.png";
-import iPhone from "../assets/iPhone 15.png";
-import rings from '../assets/7622201730727 1.png';
-import cola from '../assets/6222014300974-1 1.png';
-import milk from '../assets/5152MmyPcTL._AC_UF894,1000_QL80_ 1.png';
-import grocery from '../assets/item_xxl_22950402_5e5018032a346-removebg-preview 1.png';
-import diapers from '../assets/mob-app-categ-02-39-13-Nov-2024-mob-egypt-removebg-preview 1.png';
-import tissue from '../assets/mob-app-categ-08-33-13-Nov-2024-mob-egypt-removebg-preview 1 (1).png';
-import cookies from '../assets/mob-app-categ-08-33-13-Nov-2024-mob-egypt-removebg-preview 1.png';
-import oil from '../assets/mob-app-categ-14-27-13-Nov-2024-mob-egypt-removebg-preview 1.png';
-import frameBlue1 from '../assets/Frame (2).png';
-import frameBlue2 from '../assets/Frame (1).png';
-import frameBlue3 from '../assets/Group.png';
-import frameBlue4 from '../assets/Frame.png';
-import Check from '../assets/Glyph_ undefined.svg?react';
 
+import iPhone from "../assets/iPhone 15.png";
+import perfumes from "../assets/perfumes.png";
+import fashion from "../assets/fashion.png";
+import furniture from "../assets/furniture.png";
+import watches from "../assets/watches.png";
+import mobileTablets from "../assets/mobiles&tablets.png";
+import skincare from "../assets/skinCare.png";
+import kitchen from "../assets/Kitchen&Dining.png";
+import pet from "../assets/PetSupplies.png";
+import television from "../assets/Televisions.png";
+import kidsToys from "../assets/Kids&Toys.png";
+import grocery from "../assets/Grocery.png";
+import luggage from "../assets/Luggage.png";
+
+import  Expansion from "../assets/expansion.svg?react";
+import Retention from "../assets/retention.svg?react";
+import Acquisition from "../assets/acquisition.svg?react";
+import LunchMarket from "../assets/lunchMarket.svg?react";
+import TeamSection from './TeamSection';
+import Contact from "./Contact";
+import BackgroundCircles from "./BackgroundCircles";
+import backgroundHero from '../assets/background-hero.png';
+
+import AboutIcon from "../assets/about.svg?react";
+import KeyIcon from "../assets/key.svg?react";
+import VisionIcon from "../assets/vision.svg?react";
+import PeopleIcon from "../assets/people.svg?react";
+
+import StoreusLogo from "../assets/storeus-logo.png";
+import AboutUs from "../assets/aboutUs.png";
+import visionImage from "../assets/visionImage.png";
+import { Link } from "react-router-dom";
+import Figures from "./Figures";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,318 +53,192 @@ const Home = () => {
     Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`)
   );
 
-  const prepend = () => {
-    setSlides([
-      `Slide ${prependNumber.current - 2}`,
-      `Slide ${prependNumber.current - 1}`,
-      ...slidesLast,
-    ]);
-    prependNumber.current = prependNumber.current - 2;
-    swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
-  };
-
-  const append = () => {
-    setSlides([...slidesLast, 'Slide ' + ++appendNumber.current]);
-  };
-
-  const slideTo = (index) => {
-    swiperRef.slideTo(index - 1, 0);
-  };
-
   const cards = [
-    { id: 3, icon: Frame3, title: "المعالم الرئيسية" },
-    { id: 1, icon: Frame1, title: "من نحن" },
-    { id: 2, icon: Frame2, title: "رؤيتنا" },
-  
-    { id: 4, icon: Frame4, title: "فريقنا" }
-  ];
+  { id: 'about', icon: AboutIcon, title: "About Us" },
+  { id: 'vision', icon: VisionIcon, title: " Vision" },
+  { id: 'timeline', icon: KeyIcon , title: "Timeline" },
+  { id: 'team', icon: PeopleIcon, title: "Our Team" }
+];
 
-  const expansionCards = [
-    { 
-      id: 1,
-      icon: frameBlue1,
-      period: "2024 - Ongoing",
-      title: "دخول السوق",
-      items: [
-        " إطلاق منصة Storeus - الموقع الإلكتروني والتطبيق",
-        "فئات المنتجات الأولية"
-       
-      ]
-    },
-    { 
-      id: 2,
-      icon: frameBlue2,
-      period: "2020 - 2023",
-      title: "الاكتساب",
-      items: [
-        "اكتساب العملاء والبائعين",
-        " الوصول إلى مليون مستخدم مسجل" ,
-        "فئات المنتجات الموسعة",
-        "التوسع في ليبيا - إطلاق الموقع الإلكتروني والتطبيق",
-        "خيارات الدفع الموسعة"
-      ]
-    },
-    { 
-      id: 3,
-      icon: frameBlue3,
-      period: "2018 - 2020",
-      title: "الاحتفاظ",
-      items: [
-        " السوق الجديد (مينا)",
-        " b2b، التخزين، التوزيع والسوق",
-        " تسمية خاصة" 
-      ]
-    },
-    { 
-      id: 4,
-      icon: frameBlue4,
-      period: "2016 - 2018",
-      title: "التوسع",
-      items: [
-        "بحث السوق",
-        "تطوير النموذج الأولي",
-        "جولة التمويل الأولى"
-      ]
-    }
-  ];
+
+
+
+const expansionCards = [
+  {
+    id: 1,
+    period: "2021 - 2022",
+    icon: LunchMarket,
+    title: "Lunch And Market Entry",
+    items: [
+      "Customer & Seller Acquisition",
+      "Reached 1 Million Registered Users",
+      "Expanded Product Categories"
+    ]
+  },
+  {
+    id: 2,
+    period: "2022 - 2023",
+    icon: Acquisition,
+    title: "Acquisition",
+    items: [
+      "Expansion into Libya",
+      "Launched Website & App",
+      "Expanded Payment Options"
+    ]
+  },
+  {
+    id: 3,
+    period: "2024",
+    icon: Retention,
+    title: "Retention",
+    items: [
+      "Focus on Loyalty & Retention Growth",
+      "Rolled Out Customer-Centric Innovations",
+      "Ongoing Expansion into Egypt"
+    ]
+  },
+  {
+    id: 4,
+    period: "2025 - Ongoing",
+    icon: Expansion,
+    title: "Expansion",
+    items: [
+      "Entry into New MENA Markets",
+      "Expansion in B2B Warehousing & Distribution",
+      "Growth in Marketplace & Private Label Manufacturing"
+    ]
+  }
+];
+
+
 
   const categories = [
-    {
-      title: "مقرمشات",
-      image: rings,
-      link: "https://example.com/snacks"
-    },
-    {
-      title: "مشروبات",
-      image: cola,
-      link: "https://example.com/drinks"
-    },
-    {
-      title: "منتجات الالبان",
-      image: milk,
-      link: "https://example.com/dairy"
-    },
-    {
-      title: "البقالة",
-      image: grocery,
-      link: "https://example.com/grocery"
-    },
-    {
-      title: "حفاضات",
-      image: diapers,
-      link: "https://example.com/diapers"
-    },
-    {
-      title: "منتجات ورقية",
-      image: tissue,
-      link: "https://example.com/paper"
-    },
-    {
-      title: "حلويات و بسكويت",
-      image: cookies,
-      link: "https://example.com/sweets"
-    },
-    {
-      title: "منتجات غذائية",
-      image: oil,
-      link: "https://example.com/food"
-    }
-  ];
+  { title: "Perfumes", image: perfumes , link: 'https://storeus.com/perfumes'},
+  { title: "Fashion", image: fashion , link: 'https://storeus.com/traditional-wear'},
+  { title: "Furniture", image: furniture , link: 'https://storeus.com/furniture'}, 
+  { title: "Watches", image: watches , link: 'https://storeus.com/watches'},
+  { title: "Mobiles & Tablets", image: mobileTablets , link: 'https://storeus.com/mobile-and-tablet'},
+  { title: "Skin Care", image: skincare , link: 'https://storeus.com/skin-care'},
+  { title: "Kitchen & Dining", image: kitchen , link: 'https://storeus.com/kitchen-and-dining'},
+  { title: "Pet Supplies", image: pet },
+  { title: "Televisions", image: television , link: 'https://storeus.com/tv'},
+  { title: "Kids & Toys", image: kidsToys , link: 'hhttps://storeus.com/kids-and-toys'},
+  { title: "Grocery", image: grocery },
+  { title: "Luggage", image: luggage },
+];
+
   
-  const slides = [
-    {
-      image: storeUsHome,
-      title: ["الابتكار.", "التكنولوجيا المتطورة.", "ذكاء البيانات."],
-      description: "يتم تطبيقه على أعمال التجارة الإلكترونية في العالم الحقيقي.",
-    },
-    {
-      image: storeUsHome, // Add second slide image path
-      title: ["السرعة.", "الأداء العالي.", "أمان البيانات."],
-      description: "حلول مبتكرة لأعمال التجارة الإلكترونية بأداء فائق.",
-    },
-    {
-      image: storeUsHome, // Add third slide image path
-      title: ["التحليل.", "الاستجابة الذكية.", "الدقة."],
-      description: "تحليلات دقيقة لقرارات ذكية في عالم التجارة.",
-    },
-  ];
+
 
 
   return (
     <>
-  <main
-  className="full-bg-img"
-  >
-    <section className=" w-full px-4 py-12 sm:py-[104px]">
-        <div className="flex  max-w-7xl mx-auto flex-row justify-between  ">
-            {/* Image - Takes full width on mobile, half on desktop */}
-          <div className="w-1/2 h-auto lg:h-full flex items-start justify-center ">
-          <Swiper
-        effect={'cards'}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="mySwiper"
-        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-      >
-        {slides.map((slide, index) => (
-            <SwiperSlide
-            key={index}
-            className="flex items-start justify-center"
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              borderRadius: "18px",
-             
-             
-              
-            }}
-          ></SwiperSlide>
-        
-            ))}
-      
-      </Swiper>
-          </div>
-           {/* Text Content */}
-           <div dir="rtl" className=" px-4  sm:px-6 font-sans">
-  <div className="max-w-3xl mx-auto text-start">
-  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-relaxed">
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={currentIndex}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.6 }}
-    >
-      {slides[currentIndex].title.map((line, idx) => (
-        <p key={idx} className={idx === 1 ? "text-[#1034A6]" : "text-black"}>
-          {line}
-        </p>
-      ))}
-    </motion.div>
-  </AnimatePresence>
-</h1>
-
-<AnimatePresence mode="wait">
-  <motion.p
-    key={currentIndex + "-desc"}
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.5 }}
-    className="text-gray-600 mt-6 text-base sm:text-lg"
-  >
-    {slides[currentIndex].description}
-  </motion.p>
-</AnimatePresence>
-
-    <div className="mt-8">
-      <a
-        href="#contact"
-        className="inline-block bg-[#1034A6] hover:bg-[#1034A6] text-white font-semibold px-6 py-2 rounded-full transition"
-      >
-        تواصل معنا
-      </a>
-    </div>
-  </div>
-</div>
 
 
-
-        
-
-         
-        </div>
-      </section>
-    
-
-
-
-
+   <HeroSection />
 
       {/* Cards Section */}
-      <div dir="rtl" className="px-4  sm:px-6 lg:px-8 py-6  font-sans">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-4 sm:gap-6">
+      <div  className="px-4 relative sm:px-6 lg:px-8 py-6  font-sans">
+      {/* <BackgroundCircles position="top-tight" /> */}
+        <div className="grid relative z-10 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-4 sm:gap-6">
           {cards.map((card) => (
-            <button
+            <a href={`#${card.id}`}
               key={card.id}
               className={`group p-4 sm:p-6 rounded-2xl shadow-md sm:shadow-xl border border-gray-200 cursor-pointer transition-all duration-300
-                bg-white hover:bg-blue-50 focus:text-white focus:bg-[#1034A6] active:bg-[#1034A6] active:text-white
+                bg-[#F1EBDA] hover:bg-[#DCCDA5] focus:bg-[#DCCDA5] 
                 focus:outline-none`}
             >
               <div className="flex flex-col items-center text-center">
                 <div className="h-12 sm:h-16 w-12 sm:w-16 flex items-center justify-center mb-4 sm:mb-6">
-                  <card.icon className="h-8 w-8 sm:h-12 sm:w-12 text-black fill-current group-hover:text-[#1034A6] group-focus:text-white transition-colors duration-300" />
+                  <card.icon className="h-8 w-8 sm:h-12 sm:w-12 text-black fill-current group-hover:text-[#DCCDA5] group-focus:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-base sm:text-lg font-medium">{card.title}</h3>
               </div>
-            </button>
+            </a>
           ))}
         </div>
       </div>
 
-      {/* Expansion Cards Section */}
-      <section className=" w-full py-12 sm:py-[104px]">
-        <div className="flex flex-col max-w-7xl mx-auto lg:flex-row min-h-[50vh]  ">
-           {/* Text Content */}
-           <div className="w-full lg:w-1/2 flex items-center py-8 lg:py-0 px-4 sm:px-8  ">
-            <div className="w-full max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-right"> نحن أكثر من مجرد شركة</h2>
-              <p className="text-base sm:text-lg text-gray-700 text-right leading-relaxed">
-              سيجنتشر تكنولوجي شركةٌ قائمةٌ على الابتكار والتكنولوجيا. نُجري أبحاثًا ونُطلق ونُطوّر مشاريعَ أعمالٍ رائدةً في الشرق الأوسط والعالم<br/>
- نحن نغطي عملية الأعمال بأكملها داخليًا - البحث وتطوير البرمجيات والتسويق والإدارة والخدمات اللوجستية وخدمة العملاء وتحليل  البيانات  
- <br/>
-العمود الفقري لمشاريعنا هو مجموعة من منصات التكنولوجيا الحديثة جنبًا إلى جنب مع إدارة المشاريع المتقدمة
-  نحن نجهز ونطلق كل مشروع من مشاريعنا بعناية، وننميها بشغف ونديرها بكفاءة
-              </p>
-            </div>
-          </div>
-          {/* Image - Takes full width on mobile, half on desktop */}
-          <div className="w-full  lg:w-1/2 h-auto lg:h-full flex items-center justify-center ">
-            <img
-              src={iPhone}
-              alt="وصف الصورة"
-              className="w-full hover:scale-105 transition-all duration-300  object-contain lg:object-cover"
-            />
-          </div>
+      {/* aboutUs section */}
 
-         
-        </div>
-      </section>
+      <section id="about" className="w-full py-12 px-4 sm:px-6 lg:px-8 sm:py-20">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+    {/* Left Column - Text */}
+    <div className="w-full lg:w-1/2  flex flex-col justify-center ">
+      <h6 className="text-sm sm:text-base text-black font-semibold mb-2 ml-8">about us</h6>
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 leading-tight">
+        At Signature Technology
+      </h1>
+      <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+Signature Technology is a forward-thinking, innovation-driven company that researches, launches, and grows cutting-edge business ventures across the Middle East. We handle every aspect of the business process in-house—from research and software development to logistics, marketing, and customer service—ensuring end-to-end excellence and agility. With a strong focus on market trends and customer needs, we specialize in scalable, tech-enabled solutions that drive growth and impact across diverse industries.
+      </p>
+    </div>
+
+    {/* Right Column - Image */}
+    <div className="w-full lg:w-1/2 flex md:justify-center lg:justify-end items-center">
+      <img
+        src={AboutUs}
+        alt="Descriptive alt text"
+        className="w-full max-w-[500px] object-contain"
+      />
+    </div>
+
+  </div>
+</section>
+
+ {/* vision section */}
+
+   <section id="vision" className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+  <div className="max-w-7xl mx-auto   flex flex-col-reverse md:flex-row items-center  gap-10">
+        {/* Right Column - Image */}
+    <div className="w-full lg:w-1/2 flex md:justify-center sm:justify-center lg:justify-start items-center">
+      <img
+        src={visionImage}
+        alt="Descriptive alt text"
+        className="w-full  max-w-[500px] object-contain"
+      />
+    </div>
+
+    {/* Left Column - Text */}
+    <div className="w-full lg:w-1/2 flex flex-col justify-center ">
+      <h6 className="text-sm sm:text-base text-black font-semibold mb-2 ml-8">Our Vision </h6>
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 leading-tight">
+      Pioneering the Future of Digital Commerce
+      </h1>
+      <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+Our vision is to become a leading force in online marketplaces, cross-border distribution (from China to MENA), and direct-to-consumer (DTC) services across the UAE, Egypt, Libya, and the broader MENA region. We aim to bridge global supply chains with regional demand by leveraging advanced technology, strategic partnerships, and a deep understanding of local markets. Driven by our core values—empowerment, integrity, innovation, customer centricity, and community—we are committed to reshaping commerce with accessible, efficient, and customer-focused solutions that fuel long-term regional growth.
+      </p>
+    </div>
+
+
+
+  </div>
+</section>
+
+
+    
+
+
 {/* Expansion Cards Section */}
-      <div dir="rtl" className="px-4 sm:px-6 lg:px-8 py-12  font-sans">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8  text-center"> المعالم الرئيسية والجداول الزمنية</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-4 sm:gap-6">
+  <div id="timeline" className="px-4 sm:px-6 text-center lg:px-8 py-12 font-sans">
+          <h6 className="text-sm sm:text-base text-black font-semibold mb-2 ml-8">latest service </h6>
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-center">Key Milestone & Timelines</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-6">
         {expansionCards.map((card) => (
           <div
             key={card.id}
-            
-            className="group p-4 relative sm:p-6 rounded-2xl shadow-md sm:shadow-xl border border-gray-200 transition-all duration-300
-              bg-white  focus:outline-none"
+            className="relative bg-white rounded-lg border-2 border-[#E6E6E6] p-6 flex flex-col"
           >
-<div className="absolute top-0 left-0 w-full h-8  bg-[#1034A6] rounded-t-2xl  text-center flex items-center justify-center  text-white" > {card.period}</div>
-            <div className="flex flex-col h-full">             
-             <div className="h-12 mt-6 sm:h-16 w-12 sm:w-16 flex mx-auto items-center justify-center mb-4">
-  <img
-    src={card.icon}
-    alt={card.title}
-    className="h-8 w-8 sm:h-12 sm:w-12 object-contain group-hover:scale-110 transition-transform duration-300"
-  />
-</div>
-
-
-              <div className="mb-2 pb-2 border-b border-gray-200">
-  
-                <h3 className="text-lg text-center font-medium">{card.title}</h3>
-              </div>
-              <ul className="mt-2 space-y-2 text-sm sm:text-base">
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-[#F5F5F5] px-4 py-1 rounded-full text-black font-semibold text-sm">{card.period}</div>
+            <div className="flex flex-col items-center mt-8">
+ <card.icon className="h-12 w-12 mb-4" />
+              <h3 className="text-lg font-bold mb-2">{card.title}</h3>
+              <hr className="w-full border-t-2 border-gray-200 mb-4" />
+              <ul className="text-sm list-disc list-inside space-y-2 text-start text-black">
                 {card.items.map((item, index) => (
-                  <li key={index} className="flex  items-start">
-                   <Check className="ml-2 w-4 h-4 inline-block" />
-
-                    <span>{item}</span>
-                  </li>
+                  <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -359,109 +248,100 @@ const Home = () => {
     </div>
 
 
-      {/* Hero Section */}
-      <section className=" w-full py-12 sm:py-[104px]">
-        <div className="flex flex-col lg:flex-row min-h-[50vh]  ">
-          {/* Image - Takes full width on mobile, half on desktop */}
-          <div className="w-full lg:w-1/2 h-auto lg:h-full flex items-center justify-center ">
-            <img
-              src={storeUsHome}
-              alt="وصف الصورة"
-              className="w-full h-auto lg:max-h-none object-contain lg:object-cover"
-            />
-          </div>
+    
+<section  className="w-full relative py-12 sm:py-[104px]">
+  <div className="flex relative z-10 flex-col max-w-7xl mx-auto lg:flex-row">
+    
+    {/* LEFT COLUMN */}
+    <div className="w-full lg:w-1/2 px-4 sm:px-8">
+      <div className="w-full max-w-2xl mx-auto flex flex-col items-start">
+        {/* Align image and text from same x-axis */}
+        <img
+          src={StoreusLogo}
+          alt="Foundation"
+          className=" h-auto ml-[-50px] w-[400px] object-contain"
+        />
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Foundation</h2>
+        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+          Founded in 2020 by visionary entrepreneurs, StoreUs set out to revolutionize the e-commerce landscape in the Middle East. Operating across the UAE, Libya, and Egypt—with plans for broader MENA expansion—StoreUs provides consumers with a seamless online shopping experience. The platform offers a wide selection of products across diverse categories, including electronics, fashion, home décor, and more.
+        </p>
+      </div>
+    </div>
 
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2 flex items-center py-8 lg:py-0 px-4 sm:px-8 lg:px-30 ">
-            <div className="w-full max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-right">عنوان رئيسي</h2>
-              <p className="text-base sm:text-lg text-gray-700 text-right leading-relaxed">
-                هذا نص تجريبي باللغة العربية يوضح كيف يمكن عرض المحتوى النصي بجانب صورة في
-                تصميم متجاوب باستخدام Tailwind CSS و React. هذا المثال مفيد للأقسام التعريفية.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* RIGHT COLUMN */}
+    <div className="w-full lg:w-1/2 px-4 sm:px-8 flex justify-center items-start">
+      <img
+        src={iPhone}
+        alt="iPhone"
+        className="w-full object-contain hover:scale-105 transition-all duration-300"
+      />
+    </div>
+    
+  </div>
+</section>
 
 
-     {/* Hero Section */}
-      <div dir="rtl" className=" py-16 px-4 sm:px-6 lg:px-8 font-sans">
-  <div className="text-center max-w-3xl mx-auto mb-12">
-    <h2 className="text-3xl sm:text-4xl font-bold mb-4">آلاف المنتجات، منصة واحدة</h2>
-    <p className="text-gray-600">نحن نقدم مجموعة واسعة من المنتجات عبر فئات متعددة، مما يجعل عملية الحصول على المنتجات بسيطة وفعالة ومصممة خصيصًا لتلبية احتياجات عملك.</p>
+     {/* categories Section */}
+<section className="w-full py-16 px-4 sm:px-6 lg:px-8">
+  {/* Heading */}
+  <div className="text-center max-w-2xl mx-auto mb-10">
+    <p className="text-sm text-black font-medium"> StoreUs</p>
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 mb-4">Categories</h2>
+    <p className="text-gray-600">
+      The platform offers a wide selection of products across diverse categories,
+      including electronics, fashion, home décor, and more.
+    </p>
   </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+  {/* Categories Grid */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 max-w-6xl mx-auto">
     {categories.map((category, index) => (
+      
       <div
         key={index}
-        className="bg-[#F4F6FA] p-4 rounded-2xl text-center shadow-sm hover:shadow-md transition"
+
       >
-        <a href={category.link} target="_blank" rel="noopener noreferrer">
-          <img
-            src={category.image}
-            alt={category.title}
-            className="mx-auto mb-4 h-32 hover:scale-105 transition-all duration-300 object-contain"
-          />
-        </a>
-        <h3 className="text-lg font-medium">{category.title}</h3>
+        <div
+         className="border rounded-xl p-4 bg-gradient-to-b from-white to-[#f9f5eb] flex flex-col items-center justify-center text-center transition hover:shadow-md">
+      
+        <img
+          src={category.image}
+          alt={category.title}
+          className="h-28 object-contain mb-3"
+        />
+        </div>
+        <div>
+          <h3 className="text-lg text-center font-semibold mt-2">{category.title}</h3>
+
+        </div>
       </div>
+      
     ))}
   </div>
+  
 
+  {/* Explore More Button */}
   <div className="text-center mt-10">
-    <button className="bg-[#1034A6] hover:bg-[#1034A6] text-white font-semibold px-6 py-2 rounded-full transition">
-      اقراء المزيد
+    <button className="px-6 py-2 border border-black text-black text-sm font-medium rounded-full hover:bg-gray-100 transition flex items-center gap-2 mx-auto">
+    <a href="https://storeus.com/" target="_blank" rel="noopener noreferrer">  Explore More
+      <span className="text-lg">→</span>
+      </a>
     </button>
   </div>
-</div>
+</section>
 
 
-{/* slideLast */}
+<Figures/>
 
 
-<div>
-<Swiper
-        modules={[Virtual, Navigation, Pagination]}
-        onSwiper={setSwiperRef}
-        slidesPerView={3}
-        centeredSlides={true}
-        spaceBetween={30}
-        pagination={{
-          type: 'fraction',
-        }}
-        navigation={true}
-        virtual
-        style={{ width: '85%'  }}
-        className="swiper-customize py-16 px-4 sm:px-6 lg:px-8"
-      >
-        {slidesLast.map((slideContent, index) => (
-          <SwiperSlide key={slideContent} virtualIndex={index}>
-            {slideContent}
-          </SwiperSlide>
-        ))}
-      </Swiper>
 
-      {/* <p className="append-buttons ">
-        <button onClick={() => prepend()} className="prepend-2-slides">
-          Prepend 2 Slides
-        </button>
-        <button onClick={() => slideTo(1)} className="prepend-slide">
-          Slide 1
-        </button>
-        <button onClick={() => slideTo(250)} className="slide-250">
-          Slide 250
-        </button>
-        <button onClick={() => slideTo(500)} className="slide-500">
-          Slide 500
-        </button>
-        <button onClick={() => append()} className="append-slides">
-          Append Slide
-        </button>
-      </p>  */}
-</div>
-</main>
+
+
+{/* slideLast section */}
+<TeamSection />
+{/* contact us section */}
+<Contact/>
+
     </>
   );
 };
